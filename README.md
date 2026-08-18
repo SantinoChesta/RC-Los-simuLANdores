@@ -8,6 +8,6 @@
 - Chesta, Santiagoc
 - Garay, Alexis Tomás
 - Guzmán Gonzalez, Pedro
-- Vera, Agustín
+- Vera Gonzalez, Fernando Agustin
 - Martin, Agostina Rocio
 - Zucchella Paz, Valentino
