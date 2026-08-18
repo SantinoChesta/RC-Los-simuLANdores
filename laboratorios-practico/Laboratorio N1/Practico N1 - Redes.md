@@ -19,7 +19,7 @@ Garay, Alexis Tomás
 
 Guzmán Gonzalez, Pedro
 
-Vera, Agustín
+Vera Gonzalez, Fernando Agustín
 
 Martin, Agostina Rocio
 
