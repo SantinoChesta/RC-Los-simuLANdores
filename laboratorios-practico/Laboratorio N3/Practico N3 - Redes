@@ -77,7 +77,7 @@ La información la proporciona el campo **Tipo (EtherType)** de la trama Etherne
 
 Usando Wireshark, capturamos tráfico generado por nuestra propia computadora mientras accedíamos a una página web.
 
-<!-- IMAGEN 1: Captura de Wireshark del paquete 2578 (navegación web, GET /online/ HTTP/1.1) -->
+<img width="600" alt="Captura de Wireshark del paquete 2578" src="imagenes/Picture1.png" />
 
 ### a) Seleccionar una trama Ethernet e identificar las direcciones MAC de origen y destino. ¿A qué dispositivos creen que corresponden?
 
@@ -144,16 +144,16 @@ TCP (Transmission Control Protocol) se ejecuta en los sistemas finales para reso
 El "Four-way Handshake" se llama así porque necesita 4 pasos, ya que TCP es **full-duplex**: cada extremo tiene su propio canal de envío de datos independiente, y cada uno lo cierra por separado con su propio FIN/ACK. A diferencia del "Three-way Handshake", que solo necesita 3 pasos para conectarse de manera ordenada.
 
 Iniciamos una instancia de PacketSender como servidor TCP, tomando nota del puerto asignado, y otra instancia como cliente apuntando a `localhost` y ese puerto. Configuramos Wireshark para capturar la interfaz de loopback con el filtro `tcp.port == <puerto>`.
+<img width="600" alt="Captura de Wireshark" src="imagenes/Picture3.png" />
+<img width="600" alt="Captura de Packet Sender" src="imagenes/Picture4.png" />
 
 ### d) Iniciar la conexión enviando un paquete, capturar el handshake y el paquete de datos. Analizar el paquete de datos, sus distintas partes y encontrar la carga útil del paquete usando WireShark.
 
 Enviamos el paquete y lo capturamos con Wireshark. Analizamos e identificamos las partes (capas Loopback / IP / TCP / Data) y por último localizamos la carga útil (payload): el mensaje que enviamos fue **"Talleres"**.
 
-<!-- IMAGEN 2: Captura de Wireshark mostrando el handshake y el paquete PSH,ACK con el payload "Talleres" -->
-
 ### e) Finalizar la conexión y capturar el Four-way handshake
 
-<!-- IMAGEN 3: Captura de Wireshark mostrando los 4 paquetes del Four-way handshake (FIN,ACK / ACK / FIN,ACK / ACK) -->
+<img width="600" alt="Captura de Wireshark mostrando los 4 paquetes del Four-way handshake " src="imagenes/Picture5.png" />
 
 ```
 [FIN, ACK]  ← el cliente dice "ya no tengo más para enviar"
@@ -181,9 +181,9 @@ El servidor responde a comandos que finalizan con la secuencia `\r`. Iniciamos l
 
 Finalmente, enviamos el comando correspondiente a nuestro grupo: **"Los simuLANdores"**.
 
-<!-- IMAGEN 4: Captura del Follow TCP Stream mostrando "Los simuLANdores" y la respuesta "seq: 13, payload: om" -->
+<img width="600" alt="Captura del Follow TCP Stream mostrando Los simuLANdores y la respuesta seq: 13, payload: om" src="imagenes/Picture6.png"/>
 
-<!-- IMAGEN 5: Captura de Wireshark con el filtro tcp.stream eq 95 mostrando la lista de paquetes de la sesión -->
+<img width="600" alt="Captura de Wireshark con el filtro tcp.stream eq 95 mostrando la lista de paquetes de la sesión" src="imagenes/Picture7.png" />
 
 Al establecer una conexión TCP con el servidor remoto (34.136.251.235:5555) pudimos comprobar en la práctica cómo funciona un protocolo simple a nivel de aplicación construido sobre TCP: el cliente envía comandos de texto plano finalizados en `\r`, y el servidor responde de forma sincrónica sobre la misma conexión. Gracias a Wireshark, y en particular a la función **Follow TCP Stream**, pudimos reconstruir toda la conversación completa entre cliente y servidor de forma legible, sin ningún esfuerzo adicional, ya que —al igual que en el punto 3— el tráfico viaja sin cifrar. Al enviar el comando correspondiente a nuestro grupo (**Los simuLANdores**), el servidor respondió con **`seq: 13, payload: om`**, confirmando la recepción del comando y devolviendo un dato de control asociado a esa sesión.
 
