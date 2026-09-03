@@ -1,7 +1,9 @@
 <div align="center">
 
 # UNIVERSIDAD NACIONAL DE CÓRDOBA
+
 ### FACULTAD DE CIENCIAS EXACTAS, FÍSICAS Y NATURALES
+
 ### CÁTEDRA DE REDES DE COMPUTADORAS
 
 ## TRABAJO PRÁCTICO N°3
@@ -188,3 +190,5 @@ Finalmente, enviamos el comando correspondiente a nuestro grupo: **"Los simuLANd
 Al establecer una conexión TCP con el servidor remoto (34.136.251.235:5555) pudimos comprobar en la práctica cómo funciona un protocolo simple a nivel de aplicación construido sobre TCP: el cliente envía comandos de texto plano finalizados en `\r`, y el servidor responde de forma sincrónica sobre la misma conexión. Gracias a Wireshark, y en particular a la función **Follow TCP Stream**, pudimos reconstruir toda la conversación completa entre cliente y servidor de forma legible, sin ningún esfuerzo adicional, ya que —al igual que en el punto 3— el tráfico viaja sin cifrar. Al enviar el comando correspondiente a nuestro grupo (**Los simuLANdores**), el servidor respondió con **`seq: 13, payload: om`**, confirmando la recepción del comando y devolviendo un dato de control asociado a esa sesión.
 
 Esto refuerza la conclusión general del TP: TCP garantiza que los datos lleguen completos, en orden y sin errores (a diferencia de IP o Ethernet, que no aseguran nada de eso), pero no aporta ningún tipo de seguridad ni confidencialidad. Cualquier intermediario en la red (o incluso nosotros mismos, sniffeando nuestro propio tráfico) puede ver exactamente qué se está enviando y recibiendo. En un entorno real, este mismo intercambio debería viajar cifrado para evitar que la información (en este caso el comando del grupo, en otros casos podrían ser credenciales o datos sensibles) quede expuesta a cualquiera que esté capturando el tráfico de la red.
+
+Si además juntamos los comandos de todos los grupos y ordenamos sus payload con el SEQ, obetenemos el siguiente link a youtube: https://www.youtube.com/watch?v=dQw4w9WgXcQ
