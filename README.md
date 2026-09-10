@@ -4,10 +4,11 @@
 
 ### Alumnos
 
-- Barrio, Rafael
-- Chesta, Santiagoc
-- Garay, Alexis Tomás
-- Guzmán Gonzalez, Pedro
-- Vera Gonzalez, Fernando Agustin
-- Martin, Agostina Rocio
-- Zucchella Paz, Valentino
+* Barrio, Rafael
+* Chesta, Santino
+* Garay, Alexis Tomás
+* Guzmán Gonzalez, Pedro
+* Vera Gonzalez, Fernando Agustin
+* Martin, Agostina Rocio
+* Zucchella Paz, Valentino
+
