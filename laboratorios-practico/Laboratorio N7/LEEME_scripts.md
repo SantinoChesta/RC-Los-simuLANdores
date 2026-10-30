@@ -8,7 +8,7 @@ requiere `tshark` instalado. El procesador de JSON importa el análisis de
 ## Desde una captura
 
 ```bash
-python3 procesar_captura.py /home/valentino/Descargas/paq2.pcapng
+python3 procesar_captura.py paquetes1.pcapng
 ```
 
 Busca mensajes JSON UDP con SIZE, PL y CHECK y agrupa las cargas idénticas.
